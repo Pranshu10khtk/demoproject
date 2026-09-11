@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarai</title>
+</head>
+<body>
+    <h3>Hello, there is all Listings</h3>
+    <a href="/listings/new">
+    <button type="button">Create New Listing</button>
+</a>
+
+    <ul>
+   <% for(let listing of allListing) {%>
+    <li>
+        <a href="/listings/<%= listing._id %>">
+            <%= listing.title%>
+        </a>
+    </li>
+   <% } %>
+   
+    </ul>
+</body>
+</html>
+ 
+ 
