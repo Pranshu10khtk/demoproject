@@ -1,7 +1,7 @@
 <% layout("/layouts/boilerplate") %>
     <h1>Edit your Listing</h1>
 
-    <form class="edit-listing-form" method="POST" action="/listings/<%= foundListing._id %>?_method=PUT">
+    <form class="edit-listing-form needs-validation" method="POST" action="/listings/<%= foundListing._id %>?_method=PUT" novalidate>
 
         <div class="edit-listing-field">
         <label for="title">Title</label>
@@ -11,7 +11,10 @@
             value="<%= foundListing.title %>"
             placeholder="Enter the title"
             type="text"
+            class="form-control"
+            required
         >
+        <div class="invalid-feedback">Please enter a title.</div>
         </div>
 
         <div class="edit-listing-field">
@@ -43,7 +46,11 @@
             value="<%= foundListing.price %>"
             placeholder="Enter the price"
             type="number"
+            class="form-control"
+            min="0"
+            required
         >
+        <div class="invalid-feedback">Please enter a valid price.</div>
         </div>
 
         <div class="edit-listing-field">
@@ -54,7 +61,10 @@
             value="<%= foundListing.country %>"
             placeholder="Enter the country"
             type="text"
+            class="form-control"
+            required
         >
+        <div class="invalid-feedback">Please enter a country.</div>
         </div>
         </div>
 
@@ -66,7 +76,10 @@
             value="<%= foundListing.location %>"
             placeholder="Enter the location"
             type="text"
+            class="form-control"
+            required
         >
+        <div class="invalid-feedback">Please enter a location.</div>
         </div>
 
        <button type="submit" class="btn edit-btn">Edit</button>

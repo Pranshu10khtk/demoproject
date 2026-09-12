@@ -1,6 +1,13 @@
 body {
     font-family: "Plus Jakarta Sans", sans-serif;
     font-weight: 400;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+body > .container {
+    flex: 1 0 auto;
 }
 
 .fw-light {

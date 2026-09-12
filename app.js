@@ -5,6 +5,9 @@ const listing = require("./models/Listing.js");
 const path = require("path");
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
+const wrapAsync = require("./utils/wrapAsync.js");
+const ExpressError = require("./utils/ExpressError.js");
+
 
 const MONGO_URL = "mongodb://127.0.0.1:27017/test";
 
@@ -34,10 +37,10 @@ app.get("/", (req, res) => {
 });
 
 // Index Route or all listings
-app.get("/listings", async (req, res) => {
-    const allListing = await listing.find({});
+app.get("/listings", wrapAsync(async (req, res) => {
+    const allListing = await listing.find({}).lean();
     res.render("listings/index.ejs", { allListing });
-});
+}));
 
 // New Route
 app.get("/listings/new", (req, res) => {
@@ -45,30 +48,52 @@ app.get("/listings/new", (req, res) => {
 });
 
 // Show Route
-app.get("/listings/:id", async(req, res) => {
+app.get("/listings/:id", wrapAsync(async (req, res) => {
     let { id } = req.params;
     const foundListing = await listing.findById(id);
+
+    if (!foundListing) {
+        throw new ExpressError(404, "Page Not Found");
+    }
+
     res.render("listings/show", { foundListing });
-});
+}));
 
 // Create Route
-app.post("/listings", async (req, res) => {
-    const newListing = new listing(req.body.listing);
+app.post("/listings", wrapAsync (async (req, res, next) => {
+    const listingData = { ...(req.body.listing || {}) };
+
+    if (!listingData.image?.url?.trim()) {
+        delete listingData.image;
+    }
+
+    if (!listingData.title?.trim() || listingData.price === undefined || listingData.price === "") {
+        return res.status(400).render("listings/new.ejs", {
+            error: "Title and price are required to create a listing."
+        });
+    }
+
+    const newListing = new listing(listingData);
     await newListing.save();
     res.redirect("/listings");
-});
+
+}));
 
 // Edit Route
-app.get("/listings/:id/edit", async (req, res) => {
+app.get("/listings/:id/edit", wrapAsync(async (req, res) => {
     let { id } = req.params;
 
     const foundListing = await listing.findById(id);
 
+    if (!foundListing) {
+        throw new ExpressError(404, "Page Not Found");
+    }
+
     res.render("listings/edit", { foundListing });
-});
+}));
 
 // Update Route
-app.put("/listings/:id", async (req, res) => {
+app.put("/listings/:id", wrapAsync(async (req, res) => {
     let { id } = req.params;
 
     await listing.findByIdAndUpdate(id, {
@@ -76,16 +101,16 @@ app.put("/listings/:id", async (req, res) => {
     });
 
     res.redirect(`/listings/${id}`);
-});
+}));
 
 // Delete Route
-app.delete("/listings/:id", async (req, res) => {
+app.delete("/listings/:id", wrapAsync(async (req, res) => {
     let { id } = req.params;
 
     await listing.findByIdAndDelete(id);
 
     res.redirect("/listings");
-});
+}));
 
 // app.get("/textListing", async (req, res) => {
 
@@ -102,6 +127,20 @@ app.delete("/listings/:id", async (req, res) => {
 //     console.log("sample was saved");
 //     res.send("successful testing");
 // });
+
+
+app.use((req, res, next) => {
+    next(new ExpressError(404, "Page Not Found"));
+});
+
+app.use((err, req, res, next) => {
+    const statusCode = err.statusCode || (err.name === "CastError" ? 404 : 500);
+    const message = statusCode === 404
+        ? "The page you requested does not exist."
+        : "Something went wrong on the server.";
+
+    res.status(statusCode).render("errors/404", { statusCode, message });
+});
 
 app.listen(8080, () => {
     console.log("server is listening to the port 8080");

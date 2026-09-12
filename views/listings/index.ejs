@@ -11,10 +11,10 @@
 <div class="col">
 <a href="/listings/<%= listing._id %>" class="listing-link">
 <div class="card h-100 listing-card">
-    <img src="<%= listing.image.url %>" class="card-img-top" alt="<%= listing.title %>">
+    <img src="<%= listing.image?.url || 'https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?auto=format&fit=crop&w=800&q=60' %>" class="card-img-top" alt="<%= listing.title %>" loading="lazy" decoding="async" width="800" height="480">
   <div class="card-body">
         <b class="card-title"><%= listing.title %></b>
-        <p class="card-text">&#8377; <%= listing.price.toLocaleString("en-IN") %> / night</p>
+        <p class="card-text">&#8377; <%= listing.price != null ? listing.price.toLocaleString("en-IN") : "Price unavailable" %> / night</p>
   </div>
 </div>
 </a>

@@ -6,7 +6,7 @@
     <div class="show-listing-card">
       <div class="show-listing-image-wrap">
         <img
-          src="<%= foundListing.image.url %>"
+          src="<%= foundListing.image?.url || 'https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b' %>"
           class="show-listing-image"
           alt="<%= foundListing.title %>"
         >
@@ -18,8 +18,8 @@
         <p class="show-listing-description"><%= foundListing.description %></p>
 
         <div class="show-listing-price">
-          <strong>&#8377; <%= foundListing.price.toLocaleString("en-IN") %></strong>
-          <span> / night</span>
+          <strong>&#8377; <%= foundListing.price != null ? foundListing.price.toLocaleString("en-IN") : "Price unavailable" %></strong>
+          <% if (foundListing.price != null) { %><span> / night</span><% } %>
         </div>
 
         <div class="show-listing-actions">
