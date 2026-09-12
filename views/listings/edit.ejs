@@ -1,66 +1,78 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sarai</title>
-</head>
+<% layout("/layouts/boilerplate") %>
+    <h1>Edit your Listing</h1>
 
-<body>
+    <form class="edit-listing-form" method="POST" action="/listings/<%= foundListing._id %>?_method=PUT">
 
-    <h1>Edit Listing</h1>
-
-    <form method="POST" action="/listings/<%= foundListing._id %>?_method=PUT">
-
+        <div class="edit-listing-field">
+        <label for="title">Title</label>
         <input
+            id="title"
             name="listing[title]"
             value="<%= foundListing.title %>"
-            placeholder="enter the title"
+            placeholder="Enter the title"
             type="text"
         >
-        <br>
+        </div>
 
+        <div class="edit-listing-field">
+        <label for="description">Description</label>
         <textarea
+            id="description"
             name="listing[description]"
-            placeholder="enter the description"
+            placeholder="Enter the description"
         ><%= foundListing.description %></textarea>
-        <br>
+        </div>
 
+        <div class="edit-listing-field">
+        <label for="image">Image Link</label>
         <input
+            id="image"
             name="listing[image]"
             value="<%= foundListing.image %>"
-            placeholder="enter image URL/link"
+            placeholder="Enter image URL/link"
             type="text"
         >
-        <br>
+        </div>
 
+        <div class="edit-listing-row">
+        <div class="edit-listing-field">
+        <label for="price">Price</label>
         <input
+            id="price"
             name="listing[price]"
             value="<%= foundListing.price %>"
-            placeholder="enter the price"
+            placeholder="Enter the price"
             type="number"
         >
-        <br>
+        </div>
 
+        <div class="edit-listing-field">
+        <label for="country">Country</label>
         <input
-            name="listing[location]"
-            value="<%= foundListing.location %>"
-            placeholder="enter the location"
-            type="text"
-        >
-        <br>
-
-        <input
+            id="country"
             name="listing[country]"
             value="<%= foundListing.country %>"
-            placeholder="enter the country"
+            placeholder="Enter the country"
             type="text"
         >
-        <br>
+        </div>
+        </div>
 
-        <button type="submit">Edit Listing</button>
+        <div class="edit-listing-field">
+        <label for="location">Location</label>
+        <input
+            id="location"
+            name="listing[location]"
+            value="<%= foundListing.location %>"
+            placeholder="Enter the location"
+            type="text"
+        >
+        </div>
+
+       <button type="submit" class="btn edit-btn">Edit</button>
 
     </form>
+    </main>
 
 </body>
 </html>

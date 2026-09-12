@@ -271,28 +271,115 @@ footer {
 }
 
 .footer-bottom p {
-    margin: 0;
+    margin: 0px;
 }
 
 .add-listing-btn {
-    display: block;
+    display: -webkit-box;
     margin-left: auto;
     margin-top: 20px;
     margin-bottom: 30px;
 
-    padding: 12px 20px;
+    padding: 20px 50px;
 
     border: none;
     border-radius: 8px;
 
-    background-color: #222;
-    color: white;
+    background-color: #8edcd4;
+    color: #2c615b;
 
     font-size: 16px;
     cursor: pointer;
 }
 
+.edit-listing-page {
+    background-color: #f7f7f7;
+}
+
+.edit-listing-main {
+    max-width: 513px;
+    margin: 1.75rem auto 3rem;
+}
+
+.edit-listing-main h1 {
+    margin: 0 0 0.45rem;
+    color: #222;
+    font-size: 1.35rem;
+    font-weight: 500;
+}
+
+.edit-listing-form {
+    display: grid;
+    gap: 0.65rem;
+}
+
+.edit-listing-field {
+    display: grid;
+    gap: 0.25rem;
+}
+
+.edit-listing-field label {
+    color: #222;
+    font-size: 0.75rem;
+}
+
+.edit-listing-form input,
+.edit-listing-form textarea {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 2.35rem;
+    padding: 0.45rem 0.6rem;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+    background: white;
+    color: #222;
+    font: 0.75rem "Plus Jakarta Sans", sans-serif;
+}
+
+.edit-listing-form textarea {
+    min-height: 3.9rem;
+    resize: vertical;
+}
+
+.edit-listing-form input:focus,
+.edit-listing-form textarea:focus {
+    border-color: #999;
+    outline: none;
+    box-shadow: 0 0 0 0.1rem rgba(34, 34, 34, 0.08);
+}
+
+.edit-listing-row {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 0.9rem;
+}
+
+.edit-listing-form button {
+    display: block;
+    margin: 0.4rem 0 0;
+    padding: 0.45rem 0.8rem;
+    border: none;
+    border-radius: 0.25rem;
+    background-color: #ef3340;
+    color: white;
+    font: 0.75rem "Plus Jakarta Sans", sans-serif;
+    cursor: pointer;
+}
+
+.edit-listing-form button:hover {
+    background-color: #d92734;
+}
+
 @media (max-width: 767px) {
+    .edit-listing-main {
+        margin: 1.5rem 1rem 3rem;
+    }
+
+    .edit-listing-row {
+        grid-template-columns: 1fr 1fr;
+    }
+
     .new-listing-container {
         margin: 1.5rem auto 3rem;
         padding: 1.5rem;
@@ -301,4 +388,27 @@ footer {
     .new-listing-row {
         grid-template-columns: 1fr;
     }
+}
+
+.edit-btn {
+    width: 120px !important;
+    margin-top: 20px;
+    background-color: #008F8C !important;
+    color: white !important;
+    border: none !important;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.edit-btn:hover {
+    background-color: #006F6C !important;
+}
+
+.edit-btn {
+    width: 120px !important;
+    margin-top: 20px;
+}
+
+.edit-listing-form {
+    margin-bottom: 80px;
 }
