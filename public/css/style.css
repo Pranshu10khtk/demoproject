@@ -1,4 +1,76 @@
- 
+body {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 400;
+}
+
+.fw-light {
+    font-weight: 300 !important;
+}
+
+.fw-medium {
+    font-weight: 500 !important;
+}
+
+.fw-semibold {
+    font-weight: 600 !important;
+}
+
+.new-listing-container form button {
+    display: block;
+    margin-left: auto;
+}
+
+.new-listing-container {
+    max-width: 700px;
+    margin: 3rem auto 4rem;
+    padding: 2.5rem;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+}
+
+.new-listing-container h1 {
+    margin: 0.5rem 0 0.5rem;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.new-listing-intro {
+    margin-bottom: 2rem;
+    color: #666;
+}
+
+.new-listing-form {
+    display: grid;
+    gap: 1.25rem;
+}
+
+.new-listing-field {
+    display: grid;
+    gap: 0.45rem;
+}
+
+.new-listing-field .form-label {
+    margin: 0;
+    font-weight: 500;
+}
+
+.new-listing-field .form-control {
+    min-height: 2.75rem;
+    border-color: #ddd;
+}
+
+.new-listing-field .form-control:focus {
+    border-color: #222;
+    box-shadow: 0 0 0 0.2rem rgba(34, 34, 34, 0.1);
+}
+
+.new-listing-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+}
+
 .navbar {
     height: 5rem;
     background-color: white;
@@ -10,4 +82,223 @@
 
 .nev-link {
     color: #222222 !important;
+}
+
+.listing-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.listing-card {
+    width: 34rem;
+    max-width: 100%;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    background-color: white;
+    transition: transform 0.2s ease;
+}
+
+.listing-card::after {
+    position: absolute;
+    inset: 0;
+    background-color: white;
+    content: "";
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+.listing-link:hover .listing-card {
+    transform: translateY(-0.25rem);
+}
+
+.listing-link:hover .listing-card::after {
+    opacity: 0.1;
+}
+
+.listing-card .card-img-top {
+    width: 100%;
+    height: 15rem;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+.listing-card .card-body {
+    padding: 0.75rem 0;
+}
+
+.listing-card .card-title {
+    margin-bottom: 0.35rem;
+}
+
+.listing-card .card-text {
+    margin-bottom: 0.75rem;
+}
+
+.show-listing-page {
+    padding: 2rem 0 4rem;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    color: #222;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.show-listing-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(18rem, 0.85fr);
+    gap: 3rem;
+    align-items: center;
+    max-width: 70rem;
+    margin: 0 auto;
+}
+
+.show-listing-image {
+    display: block;
+    width: 100%;
+    height: min(34rem, 65vh);
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+.show-listing-location {
+    margin-bottom: 0.75rem;
+    color: #666;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.show-listing-content h1 {
+    margin-bottom: 1.25rem;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 600;
+}
+
+.show-listing-description {
+    color: #555;
+    line-height: 1.7;
+}
+
+.show-listing-price {
+    margin-top: 2rem;
+    font-size: 1.1rem;
+}
+
+.show-listing-price strong {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.show-listing-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 2rem;
+}
+
+.show-listing-actions form {
+    margin: 0;
+}
+
+@media (max-width: 767px) {
+    .show-listing-page {
+        padding-top: 1.25rem;
+    }
+
+    .show-listing-card {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .show-listing-image {
+        height: 20rem;
+    }
+}
+
+footer {
+    padding: 40px 60px 20px;
+    background-color: #222;
+    color: white;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.footer-brand {
+    width: 40%;
+}
+
+.footer-brand h2 {
+    margin: 0 0 10px;
+}
+
+.footer-brand p {
+    margin: 0;
+}
+
+.footer-container h3 {
+    margin: 0 0 15px;
+}
+
+.footer-container a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+.footer-container a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #555;
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+.add-listing-btn {
+    display: block;
+    margin-left: auto;
+    margin-top: 20px;
+    margin-bottom: 30px;
+
+    padding: 12px 20px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: #222;
+    color: white;
+
+    font-size: 16px;
+    cursor: pointer;
+}
+
+@media (max-width: 767px) {
+    .new-listing-container {
+        margin: 1.5rem auto 3rem;
+        padding: 1.5rem;
+    }
+
+    .new-listing-row {
+        grid-template-columns: 1fr;
+    }
 }
