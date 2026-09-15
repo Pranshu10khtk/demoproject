@@ -1,0 +1,55 @@
+<% layout("layouts/boilerplate") %>
+
+<main class="login-page">
+    <section class="login-visual" aria-label="A peaceful hotel room">
+        <div class="login-visual-content">
+            <p class="login-kicker"><i class="fa-solid fa-key"></i> Your next stay awaits</p>
+            <h1>Come back to somewhere beautiful.</h1>
+            <p>Your saved stays and favourite escapes are waiting for you.</p>
+            <div class="login-travel-note">
+                <i class="fa-solid fa-moon"></i>
+                <span>Good to see you again</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="login-panel">
+        <div class="login-form-wrap">
+            <p class="login-eyebrow">Welcome back</p>
+            <h2>Return to Sarai</h2>
+            <p class="login-intro">Sign in to manage your stays and find your next place to pause.</p>
+
+            <form method="POST" action="/user/login" class="login-form needs-validation" novalidate>
+                <div class="login-field">
+                    <label for="login-username">Username or email</label>
+                    <input id="login-username" name="username" type="text" placeholder="Enter your username or email" autocomplete="username" required>
+                    <div class="invalid-feedback">Please enter your username or email.</div>
+                </div>
+
+                <div class="login-field">
+                    <div class="login-label-row">
+                        <label for="login-password">Password</label>
+                        <a href="/user/login" class="login-help-link">Forgot password?</a>
+                    </div>
+                    <div class="login-password-wrap">
+                        <input id="login-password" name="password" type="password" placeholder="Enter your password" autocomplete="current-password" required>
+                        <button type="button" class="login-password-toggle" data-password-toggle aria-label="Show password" title="Show password">
+                            <i class="fa-regular fa-eye" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div class="invalid-feedback">Please enter your password.</div>
+                </div>
+
+                <label class="login-remember">
+                    <input type="checkbox" name="remember">
+                    <span>Keep me signed in on this device</span>
+                </label>
+
+                <button type="submit" class="login-submit">Sign in <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+            </form>
+
+            <div class="login-divider"><span>New to Sarai?</span></div>
+            <a href="/user/signup" class="login-signup-link">Create an account <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+        </div>
+    </section>
+</main>

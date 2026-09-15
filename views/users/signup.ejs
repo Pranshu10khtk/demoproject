@@ -1,0 +1,65 @@
+<% layout("layouts/boilerplate") %>
+
+<main class="signup-page">
+    <section class="signup-visual" aria-label="A quiet hotel escape">
+        <div class="signup-visual-content">
+            <p class="signup-kicker"><i class="fa-solid fa-sparkles"></i> Stay somewhere memorable</p>
+            <h1>Make room for the extraordinary.</h1>
+            <p>Handpicked stays, thoughtful hosts, and a softer way to travel.</p>
+            <div class="signup-travel-note">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Next stop: somewhere beautiful</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="signup-panel">
+        <div class="signup-form-wrap">
+            <p class="signup-eyebrow">Welcome to Sarai</p>
+            <h2>Begin your stay</h2>
+            <p class="signup-intro">Create an account to save your favourite escapes and book with ease.</p>
+
+            <div class="signup-options" aria-label="Choose a sign up method">
+                <a href="/user/facebook" class="signup-social signup-facebook">
+                    <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                    <span>Continue with Facebook</span>
+                </a>
+                <button type="button" class="signup-social signup-email-choice" data-email-choice aria-expanded="false" aria-controls="email-signup-form">
+                    <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+                    <span>Continue with email</span>
+                </button>
+            </div>
+
+            <div class="signup-divider"><span>or</span></div>
+
+            <form method="POST" action="/user/signup" class="signup-form needs-validation is-visible" id="email-signup-form" novalidate>
+                <div class="signup-field">
+                    <label for="username">Your name</label>
+                    <input id="username" name="username" type="text" placeholder="e.g. Alex Morgan" autocomplete="username" required minlength="3">
+                    <div class="invalid-feedback">Please enter at least 3 characters.</div>
+                </div>
+
+                <div class="signup-field">
+                    <label for="email">Email address</label>
+                    <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+                    <div class="invalid-feedback">Please enter a valid email address.</div>
+                </div>
+
+                <div class="signup-field">
+                    <label for="password">Create a password</label>
+                    <input id="password" name="password" type="password" placeholder="At least 8 characters" autocomplete="new-password" required minlength="8">
+                    <div class="invalid-feedback">Your password needs at least 8 characters.</div>
+                </div>
+
+                <label class="signup-consent">
+                    <input name="terms" type="checkbox" required>
+                    <span>I agree to the Sarai terms and privacy policy.</span>
+                </label>
+
+                <button type="submit" class="signup-submit">Create my account <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+            </form>
+
+            <p class="signup-login-prompt">Already a member? <a href="/listings">Browse stays</a></p>
+        </div>
+    </section>
+</main>

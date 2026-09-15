@@ -145,7 +145,8 @@ body > .container {
 }
 
 .show-listing-page {
-    padding: 2rem 0 4rem;
+    padding: 2rem 0 5rem;
+    background: linear-gradient(180deg, #f4fbfa 0, #ffffff 28rem);
 }
 
 .back-link {
@@ -169,6 +170,24 @@ body > .container {
     margin: 0 auto;
 }
 
+.show-listing-image-wrap {
+    position: relative;
+}
+
+.show-listing-image-wrap::after {
+    position: absolute;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    padding: 0.45rem 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    border-radius: 999px;
+    background: rgba(20, 39, 37, 0.7);
+    color: #fff;
+    content: "A place to remember";
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+}
+
 .show-listing-image {
     display: block;
     width: 100%;
@@ -182,6 +201,19 @@ body > .container {
     color: #666;
     font-size: 0.85rem;
     font-weight: 500;
+    text-transform: uppercase;
+}
+
+.show-listing-location i {
+    color: #008f8c;
+}
+
+.show-listing-eyebrow {
+    margin-bottom: 0.65rem;
+    color: #008f8c;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
 }
 
@@ -206,6 +238,27 @@ body > .container {
     font-weight: 600;
 }
 
+.show-listing-facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    margin-top: 1.4rem;
+    color: #52615f;
+    font-size: 0.82rem;
+}
+
+.show-listing-facts span {
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #dce9e7;
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.show-listing-facts i {
+    margin-right: 0.35rem;
+    color: #008f8c;
+}
+
 .show-listing-actions {
     display: flex;
     flex-wrap: wrap;
@@ -215,6 +268,267 @@ body > .container {
 
 .show-listing-actions form {
     margin: 0;
+}
+
+.show-listing-actions .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    min-height: 2.75rem;
+}
+
+.review-section {
+    display: grid;
+    grid-template-columns: minmax(13rem, 0.7fr) minmax(0, 1.3fr);
+    gap: 3rem;
+    max-width: 70rem;
+    margin: 4.5rem auto 0;
+    padding: 3rem 2.5rem;
+    border-top: 1px solid #dce9e7;
+    border-bottom: 1px solid #dce9e7;
+    background: linear-gradient(135deg, rgba(244, 251, 250, 0.8), rgba(255, 255, 255, 0.95));
+}
+
+.review-heading h2 {
+    margin: 0 0 0.7rem;
+    color: #193e3a;
+    font-size: 1.7rem;
+    font-weight: 600;
+    letter-spacing: 0;
+}
+
+.review-heading > p:last-child {
+    max-width: 18rem;
+    margin: 0;
+    color: #61716e;
+    line-height: 1.6;
+}
+
+.review-form {
+    padding: 1.5rem;
+    border: 1px solid #dce9e7;
+    border-radius: 0.65rem;
+    background: #fff;
+    box-shadow: 0 1rem 2rem rgba(25, 62, 58, 0.08);
+}
+
+.review-form-grid {
+    display: grid;
+    gap: 1.2rem;
+}
+
+.review-field {
+    display: grid;
+    gap: 0.45rem;
+}
+
+.review-field .form-label {
+    margin: 0;
+    color: #193e3a;
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+.rating-control {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.rating-control .form-range {
+    accent-color: #008f8c;
+    height: 1.25rem;
+}
+
+.rating-control .form-range::-webkit-slider-runnable-track {
+    height: 0.35rem;
+    border-radius: 999px;
+    background: #cfe6e3;
+}
+
+.rating-control .form-range::-webkit-slider-thumb {
+    width: 1.1rem;
+    height: 1.1rem;
+    margin-top: -0.38rem;
+    border: 0.2rem solid #fff;
+    border-radius: 50%;
+    background: #008f8c;
+    box-shadow: 0 0 0 1px #008f8c, 0 0.15rem 0.35rem rgba(0, 80, 77, 0.2);
+    appearance: none;
+}
+
+.rating-control output {
+    min-width: 3.8rem;
+    color: #008f8c;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-align: right;
+}
+
+.review-field textarea {
+    min-height: 8rem;
+    resize: vertical;
+}
+
+.review-field textarea:focus {
+    border-color: #008f8c;
+    box-shadow: 0 0 0 0.2rem rgba(0, 143, 140, 0.12);
+}
+
+.review-submit {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.25rem;
+    padding: 0.7rem 1rem;
+    border: 0;
+    border-radius: 0.4rem;
+    background: #008f8c;
+    color: #fff;
+    font: 500 0.85rem "Plus Jakarta Sans", sans-serif;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.review-submit:hover {
+    background: #006f6c;
+    transform: translateY(-1px);
+}
+
+.review-submit:focus-visible {
+    outline: 3px solid rgba(0, 143, 140, 0.25);
+    outline-offset: 3px;
+}
+
+.reviews-list {
+    grid-column: 1 / -1;
+    padding-top: 2.5rem;
+    border-top: 1px solid #dce9e7;
+}
+
+.reviews-list-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.reviews-list-heading h3 {
+    margin: 0;
+    color: #193e3a;
+    font-size: 1.35rem;
+    font-weight: 600;
+}
+
+.reviews-list-heading span {
+    color: #71817e;
+    font-size: 0.8rem;
+}
+
+.review-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.review-card {
+    position: relative;
+    min-height: 8rem;
+    padding: 1.15rem;
+    border: 1px solid #d8e8e5;
+    border-radius: 0.65rem;
+    background: #fff;
+    box-shadow: 0 0.35rem 1rem rgba(25, 62, 58, 0.04);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.review-card::before {
+    position: absolute;
+    top: 0.8rem;
+    right: 1rem;
+    color: #d7ece9;
+    content: "\201C";
+    font-family: Georgia, serif;
+    font-size: 2.4rem;
+    line-height: 1;
+}
+
+.review-card:hover {
+    border-color: #a9d4cf;
+    box-shadow: 0 0.8rem 1.5rem rgba(25, 62, 58, 0.08);
+    transform: translateY(-2px);
+}
+
+.review-card-topline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.8rem;
+}
+
+.review-stars {
+    color: #e4a832;
+    font-size: 0.8rem;
+}
+
+.review-card time {
+    color: #899592;
+    font-size: 0.72rem;
+}
+
+.review-card-footer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.review-card-footer p {
+    margin: 0;
+    padding-right: 1.5rem;
+    color: #52615f;
+    line-height: 1.6;
+}
+
+.review-card-footer form {
+    flex: 0 0 auto;
+    margin: 0;
+}
+
+.review-delete {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid #f0caca;
+    border-radius: 0.35rem;
+    background: #fff;
+    color: #c53d48;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.review-delete:hover {
+    background: #c53d48;
+    color: #fff;
+}
+
+.review-delete:focus-visible {
+    outline: 3px solid rgba(197, 61, 72, 0.2);
+    outline-offset: 2px;
+}
+
+.reviews-empty {
+    margin: 0;
+    padding: 1.5rem;
+    border: 1px dashed #b9d6d2;
+    border-radius: 0.65rem;
+    background: rgba(255, 255, 255, 0.65);
+    color: #61716e;
+    text-align: center;
 }
 
 @media (max-width: 767px) {
@@ -229,6 +543,22 @@ body > .container {
 
     .show-listing-image {
         height: 20rem;
+    }
+
+    .show-listing-image-wrap::after {
+        right: 0.75rem;
+        bottom: 0.75rem;
+    }
+
+    .review-section {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-top: 3rem;
+        padding: 2rem 0;
+    }
+
+    .review-cards {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -372,6 +702,656 @@ footer {
     color: white;
     font: 0.75rem "Plus Jakarta Sans", sans-serif;
     cursor: pointer;
+}
+
+.signup-page {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(25rem, 0.95fr);
+    min-height: calc(100vh - 5rem);
+    margin: 0 -0.75rem;
+    overflow: hidden;
+    background: #f7fbfa;
+}
+
+.signup-visual {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    min-height: 42rem;
+    padding: clamp(2rem, 6vw, 5rem);
+    background: linear-gradient(180deg, rgba(16, 49, 46, 0.03), rgba(16, 49, 46, 0.76)),
+        url("https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1400&q=85") center / cover;
+    color: #fff;
+    isolation: isolate;
+    animation: signup-image-in 1s ease both;
+}
+
+.signup-visual::after {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(135deg, rgba(0, 143, 140, 0.2), transparent 45%);
+    content: "";
+}
+
+.signup-visual-content {
+    max-width: 31rem;
+    animation: signup-content-in 0.8s 0.2s ease both;
+}
+
+.signup-kicker,
+.signup-eyebrow {
+    color: #64cfc4;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.signup-kicker i {
+    margin-right: 0.35rem;
+}
+
+.signup-visual h1 {
+    max-width: 27rem;
+    margin: 1rem 0;
+    font-size: clamp(2.6rem, 5vw, 4.6rem);
+    font-weight: 500;
+    line-height: 1.04;
+}
+
+.signup-visual-content > p:not(.signup-kicker) {
+    max-width: 25rem;
+    color: rgba(255, 255, 255, 0.82);
+    line-height: 1.7;
+}
+
+.signup-travel-note {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 2.25rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 999px;
+    background: rgba(20, 39, 37, 0.36);
+    font-size: 0.78rem;
+    backdrop-filter: blur(0.5rem);
+}
+
+.signup-travel-note i {
+    color: #64cfc4;
+}
+
+.signup-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem clamp(1.5rem, 6vw, 6rem);
+    background: #f7fbfa;
+}
+
+.signup-form-wrap {
+    display: flex;
+    flex-direction: column;
+    width: min(100%, 26rem);
+    animation: signup-form-in 0.8s 0.15s ease both;
+}
+
+.signup-eyebrow {
+    margin-bottom: 0.8rem;
+    color: #008f8c;
+}
+
+.signup-form-wrap h2 {
+    margin-bottom: 0.65rem;
+    color: #193e3a;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 500;
+}
+
+.signup-intro {
+    margin-bottom: 2rem;
+    color: #6c7b78;
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+.signup-options {
+    order: 3;
+    display: grid;
+    gap: 0.7rem;
+}
+
+.signup-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.65rem;
+    min-height: 3.1rem;
+    padding: 0.7rem 1rem;
+    border: 1px solid #d5e4e1;
+    border-radius: 0.4rem;
+    background: #fff;
+    color: #193e3a;
+    font: 600 0.8rem "Plus Jakarta Sans", sans-serif;
+    text-decoration: none;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.signup-social:hover,
+.signup-social:focus-visible,
+.signup-social.is-selected {
+    border-color: #008f8c;
+    background: #f1fbfa;
+    box-shadow: 0 0.45rem 1rem rgba(0, 143, 140, 0.1);
+    color: #006f6c;
+    outline: none;
+    transform: translateY(-1px);
+}
+
+.signup-facebook i {
+    color: #1877f2;
+}
+
+.signup-email-choice i {
+    color: #008f8c;
+}
+
+.signup-divider {
+    order: 2;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin: 1.25rem 0;
+    color: #9aaba7;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+}
+
+.signup-divider::before,
+.signup-divider::after {
+    flex: 1;
+    height: 1px;
+    background: #dce9e7;
+    content: "";
+}
+
+.signup-form {
+    order: 1;
+    display: grid;
+    gap: 1.1rem;
+}
+
+.signup-form:not(.is-visible) {
+    opacity: 0;
+    transform: translateY(-0.6rem);
+}
+
+.signup-form.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.signup-field {
+    display: grid;
+    gap: 0.45rem;
+}
+
+.signup-field label {
+    color: #35504c;
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+.signup-field input {
+    min-height: 3.15rem;
+    padding: 0.7rem 0.9rem;
+    border: 1px solid #d5e4e1;
+    border-radius: 0.4rem;
+    background: #fff;
+    color: #193e3a;
+    font: 0.85rem "Plus Jakarta Sans", sans-serif;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.signup-field input:focus {
+    border-color: #008f8c;
+    outline: none;
+    box-shadow: 0 0 0 0.22rem rgba(0, 143, 140, 0.12);
+    transform: translateY(-1px);
+}
+
+.signup-consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.55rem;
+    margin: 0.25rem 0 0.3rem;
+    color: #6c7b78;
+    font-size: 0.72rem;
+    line-height: 1.5;
+}
+
+.signup-consent input {
+    flex: 0 0 auto;
+    margin-top: 0.15rem;
+    accent-color: #008f8c;
+}
+
+.signup-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    min-height: 3.2rem;
+    border: 0;
+    border-radius: 0.4rem;
+    background: #193e3a;
+    color: #fff;
+    font: 600 0.82rem "Plus Jakarta Sans", sans-serif;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.signup-submit:hover {
+    background: #008f8c;
+    box-shadow: 0 0.7rem 1.5rem rgba(0, 143, 140, 0.2);
+    transform: translateY(-2px);
+}
+
+.signup-submit i {
+    transition: transform 0.2s ease;
+}
+
+.signup-submit:hover i {
+    transform: translateX(0.2rem);
+}
+
+.signup-login-prompt {
+    order: 4;
+    margin: 1.5rem 0 0;
+    color: #7a8986;
+    font-size: 0.75rem;
+    text-align: center;
+}
+
+.signup-login-prompt a,
+.nav-signup-link {
+    color: #008f8c;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.nav-signup-link i {
+    margin-left: 0.25rem;
+    font-size: 0.7rem;
+}
+
+.nav-login-link {
+    display: inline-block;
+    margin-right: 0.7rem;
+    color: #35504c;
+    text-decoration: none;
+}
+
+.nav-login-link:hover {
+    color: #008f8c;
+}
+
+.login-page {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(25rem, 0.95fr);
+    min-height: calc(100vh - 5rem);
+    margin: 0 -0.75rem;
+    overflow: hidden;
+    background: #f7fbfa;
+}
+
+.login-visual {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    min-height: 42rem;
+    padding: clamp(2rem, 6vw, 5rem);
+    background: linear-gradient(180deg, rgba(16, 49, 46, 0.02), rgba(16, 49, 46, 0.78)),
+        url("https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1400&q=85") center / cover;
+    color: #fff;
+    isolation: isolate;
+    animation: login-image-in 1s ease both;
+}
+
+.login-visual::after {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(135deg, rgba(0, 143, 140, 0.18), transparent 45%);
+    content: "";
+}
+
+.login-visual-content {
+    max-width: 31rem;
+    animation: login-content-in 0.8s 0.2s ease both;
+}
+
+.login-kicker,
+.login-eyebrow {
+    color: #64cfc4;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.login-kicker i {
+    margin-right: 0.35rem;
+}
+
+.login-visual h1 {
+    max-width: 29rem;
+    margin: 1rem 0;
+    font-size: clamp(2.6rem, 5vw, 4.6rem);
+    font-weight: 500;
+    line-height: 1.04;
+}
+
+.login-visual-content > p:not(.login-kicker) {
+    max-width: 25rem;
+    color: rgba(255, 255, 255, 0.82);
+    line-height: 1.7;
+}
+
+.login-travel-note {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 2.25rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 999px;
+    background: rgba(20, 39, 37, 0.36);
+    font-size: 0.78rem;
+    backdrop-filter: blur(0.5rem);
+}
+
+.login-travel-note i {
+    color: #64cfc4;
+}
+
+.login-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem clamp(1.5rem, 6vw, 6rem);
+    background: #f7fbfa;
+}
+
+.login-form-wrap {
+    width: min(100%, 26rem);
+    animation: login-form-in 0.8s 0.15s ease both;
+}
+
+.login-eyebrow {
+    margin-bottom: 0.8rem;
+    color: #008f8c;
+}
+
+.login-form-wrap h2 {
+    margin-bottom: 0.65rem;
+    color: #193e3a;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 500;
+}
+
+.login-intro {
+    margin-bottom: 2rem;
+    color: #6c7b78;
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+.login-form {
+    display: grid;
+    gap: 1.15rem;
+}
+
+.login-field {
+    display: grid;
+    gap: 0.45rem;
+}
+
+.login-field label,
+.login-label-row {
+    color: #35504c;
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+.login-label-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.login-help-link {
+    color: #008f8c;
+    font-size: 0.7rem;
+    text-decoration: none;
+}
+
+.login-field input {
+    min-height: 3.15rem;
+    width: 100%;
+    padding: 0.7rem 0.9rem;
+    border: 1px solid #d5e4e1;
+    border-radius: 0.4rem;
+    background: #fff;
+    color: #193e3a;
+    font: 0.85rem "Plus Jakarta Sans", sans-serif;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.login-field input:focus {
+    border-color: #008f8c;
+    outline: none;
+    box-shadow: 0 0 0 0.22rem rgba(0, 143, 140, 0.12);
+    transform: translateY(-1px);
+}
+
+.login-password-wrap {
+    position: relative;
+}
+
+.login-password-wrap input {
+    padding-right: 3rem;
+}
+
+.login-password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 0.75rem;
+    display: grid;
+    width: 2rem;
+    height: 2rem;
+    border: 0;
+    background: transparent;
+    color: #6c7b78;
+    cursor: pointer;
+    place-items: center;
+    transform: translateY(-50%);
+}
+
+.login-password-toggle:hover,
+.login-password-toggle:focus-visible {
+    color: #008f8c;
+    outline: none;
+}
+
+.login-remember {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    color: #6c7b78;
+    font-size: 0.72rem;
+}
+
+.login-remember input {
+    accent-color: #008f8c;
+}
+
+.login-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    min-height: 3.2rem;
+    border: 0;
+    border-radius: 0.4rem;
+    background: #193e3a;
+    color: #fff;
+    font: 600 0.82rem "Plus Jakarta Sans", sans-serif;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.login-submit:hover {
+    background: #008f8c;
+    box-shadow: 0 0.7rem 1.5rem rgba(0, 143, 140, 0.2);
+    transform: translateY(-2px);
+}
+
+.login-submit i {
+    transition: transform 0.2s ease;
+}
+
+.login-submit:hover i {
+    transform: translateX(0.2rem);
+}
+
+.login-divider {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin: 2rem 0 1rem;
+    color: #9aaba7;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+}
+
+.login-divider::before,
+.login-divider::after {
+    flex: 1;
+    height: 1px;
+    background: #dce9e7;
+    content: "";
+}
+
+.login-signup-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 3.1rem;
+    border: 1px solid #d5e4e1;
+    border-radius: 0.4rem;
+    color: #008f8c;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.login-signup-link:hover {
+    border-color: #008f8c;
+    background: #f1fbfa;
+    transform: translateY(-1px);
+}
+
+@keyframes login-image-in {
+    from { opacity: 0; transform: scale(1.03); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes login-content-in {
+    from { opacity: 0; transform: translateY(1.5rem); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes login-form-in {
+    from { opacity: 0; transform: translateX(1.5rem); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@media (max-width: 767px) {
+    .login-page {
+        display: block;
+        margin: 0 -0.75rem;
+    }
+
+    .login-visual {
+        min-height: 24rem;
+        padding: 2rem 1.5rem;
+    }
+
+    .login-visual h1 {
+        font-size: 2.65rem;
+    }
+
+    .login-panel {
+        padding: 3rem 1.5rem 4rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .login-visual,
+    .login-visual-content,
+    .login-form-wrap {
+        animation: none;
+    }
+}
+
+@keyframes signup-image-in {
+    from { opacity: 0; transform: scale(1.03); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes signup-content-in {
+    from { opacity: 0; transform: translateY(1.5rem); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes signup-form-in {
+    from { opacity: 0; transform: translateX(1.5rem); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@media (max-width: 767px) {
+    .signup-page {
+        display: block;
+        margin: 0 -0.75rem;
+    }
+
+    .signup-visual {
+        min-height: 24rem;
+        padding: 2rem 1.5rem;
+    }
+
+    .signup-visual h1 {
+        font-size: 2.65rem;
+    }
+
+    .signup-panel {
+        padding: 3rem 1.5rem 4rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .signup-visual,
+    .signup-visual-content,
+    .signup-form-wrap {
+        animation: none;
+    }
 }
 
 .edit-listing-form button:hover {
